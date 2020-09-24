@@ -21,6 +21,9 @@ rs:
 logs:
 	kubectl logs -f -n workshop -l app=spot
 
+logs-first:
+	kubectl logs -f pod/$(POD) -n workshop
+
 status:
 	kubectl rollout status deployment/spot-app -n workshop
 
@@ -35,3 +38,9 @@ deploy-describe:
 
 rollback:
 	kubectl rollout undo deployment/spot-app -n workshop
+
+scale-up:
+	kubectl scale deployment/spot-app -n workshop --replicas=10
+
+scale-down:
+	kubectl scale deployment/spot-app -n workshop --replicas=4
