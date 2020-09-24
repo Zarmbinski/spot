@@ -33,6 +33,9 @@ history:
 pod-describe:
 	kubectl describe pod/$(POD) -n workshop
 
+pod-delete:
+	kubectl delete pod/$(POD) -n workshop
+
 deploy-describe:
 	kubectl describe deployment/spot-app -n workshop
 
@@ -44,3 +47,9 @@ scale-up:
 
 scale-down:
 	kubectl scale deployment/spot-app -n workshop --replicas=4
+
+curl:
+	curl -i localhost:9090
+
+curl-health:
+	curl -i localhost:9090/health

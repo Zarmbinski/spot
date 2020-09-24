@@ -27,7 +27,7 @@ spec:
             memory: "200Mi"
           requests:
             cpu: "100m" # 100 milliCPU == 0.1 
-            memory: "100Mi" # 100 mebibyte; 1MiB = 2^20 bytes
+            memory: "100Mi" # 100 mebibytes; 1MiB = 2^20 bytes
         readinessProbe:
           failureThreshold: 3
           httpGet:
