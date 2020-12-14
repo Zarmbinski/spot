@@ -9,9 +9,10 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-    console.log(`Hello World. I am Spot`);
+    const name = process.env.NAME || 'Spot';
+    console.log(`Hello World. I am ${name}`);
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({ "message": "Hello World. I am Spot"}));
+    res.send(JSON.stringify({ "message": `Hello World. I am ${name}`}));
 });
 
 app.get('/health', (req, res) => {

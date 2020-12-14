@@ -1,5 +1,7 @@
 FROM node:12
 
+ENV NAME=spot
+
 WORKDIR /usr/src/app
 COPY package*.json ./
 
